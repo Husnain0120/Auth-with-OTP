@@ -1,16 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Link from "next/link"
-
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const navLinks = [
     { name: "Features", href: "#features" },
@@ -18,7 +17,7 @@ export default function Navbar() {
     { name: "Use Cases", href: "#use-cases" },
     { name: "Pricing", href: "#pricing" },
     { name: "Documentation", href: "#docs" },
-  ]
+  ];
 
   const loginToken = false;
 
@@ -54,7 +53,8 @@ export default function Navbar() {
             >
               Get Started
             </motion.button>
-              {loginToken ? <div className="px-3 py-3">
+            {loginToken ? (
+              <div className="px-3 py-3">
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   className="w-full bg-black text-white px-4 py-2 rounded-lg font-medium"
@@ -62,20 +62,20 @@ export default function Navbar() {
                 >
                   Logout
                 </motion.button>
-              </div>:
-              <Link href={'/login'} >
-              <div className="px-3 py-3 ">
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-black text-white px-4 py-2 rounded-lg font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Login
-                </motion.button>
-                
               </div>
+            ) : (
+              <Link href={"/login"}>
+                <div className="px-3 py-3 ">
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-black text-white px-4 py-2 rounded-lg font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Login
+                  </motion.button>
+                </div>
               </Link>
-              }
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -96,7 +96,12 @@ export default function Navbar() {
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               ) : (
                 // Icon when menu is open
@@ -108,7 +113,12 @@ export default function Navbar() {
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               )}
             </button>
@@ -146,28 +156,31 @@ export default function Navbar() {
                   Get Started
                 </motion.button>
               </div>
-              {loginToken ? <div className="px-3 py-3">
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-black text-white px-4 py-2 rounded-lg font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Logout
-                </motion.button>
-              </div>: <div className="px-3 py-3">
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-black text-white px-4 py-2 rounded-lg font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Login
-                </motion.button>
-              </div>}
-             
+              {loginToken ? (
+                <div className="px-3 py-3">
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-black text-white px-4 py-2 rounded-lg font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Logout
+                  </motion.button>
+                </div>
+              ) : (
+                <div className="px-3 py-3">
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-black text-white px-4 py-2 rounded-lg font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Login
+                  </motion.button>
+                </div>
+              )}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </nav>
-  )
+  );
 }
