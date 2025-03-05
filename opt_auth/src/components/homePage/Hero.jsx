@@ -48,7 +48,7 @@ export default function Hero() {
           className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden "
         >
           <Image
-            src="/./authImage.png"
+            src="/authImage.png"
             alt="OTP Verification illustration"
             fill
             className="object-cover"

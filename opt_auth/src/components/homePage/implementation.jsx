@@ -46,13 +46,13 @@ const verifyOTP = async (requestId, code) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg"
+            className="relative h-[400px] rounded-2xl overflow-hidden "
           >
             <Image
-              src="/placeholder.svg?height=800&width=600"
+              src="/filewithchane.png"
               alt="Implementation illustration"
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </motion.div>
         </div>

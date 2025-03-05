@@ -79,7 +79,7 @@ export default function HowItWorks() {
             className="relative h-[400px] rounded-2xl overflow-hidden  order-1 md:order-2"
           >
             <Image
-              src="/./Lock.png"
+              src="/Lock.png"
               alt="OTP Process illustration"
               fill
               className="object-contain"
