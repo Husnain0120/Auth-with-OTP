@@ -76,13 +76,13 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg order-1 md:order-2"
+            className="relative h-[400px] rounded-2xl overflow-hidden  order-1 md:order-2"
           >
             <Image
-              src="/placeholder.svg?height=800&width=600"
+              src="/./Lock.png"
               alt="OTP Process illustration"
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </motion.div>
         </div>
