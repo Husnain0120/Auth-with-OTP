@@ -9,25 +9,25 @@ export default function UseCases() {
       title: "Financial Services",
       description:
         "Secure transactions, account access, and sensitive financial operations with time-limited verification codes.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/finance.png",
     },
     {
       title: "Healthcare",
       description:
         "Protect patient data and ensure only authorized personnel can access medical records and sensitive information.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/capsoule.png?height=400&width=600",
     },
     {
       title: "E-commerce",
       description:
         "Verify customer identity during checkout and protect against fraudulent purchases and account takeovers.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/e-comrance.png?height=400&width=600",
     },
     {
       title: "Government Services",
       description:
         "Secure citizen access to government portals, tax filings, and other sensitive public services.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/bank.png?height=400&width=600",
     },
   ];
 
@@ -65,7 +65,7 @@ export default function UseCases() {
                   src={useCase.image || "/placeholder.svg"}
                   alt={`${useCase.title} illustration`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div className="p-6">
