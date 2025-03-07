@@ -63,7 +63,8 @@ export async function POST(request) {
     }).save();
 
     // mail handel
-    await sendVerifactionEmail(username, email, otpCode);
+    const id = newUser._id;
+    await sendVerifactionEmail(username, email, otpCode, id);
 
     return NextResponse.json(
       {

@@ -52,7 +52,7 @@ export default function VerifyPage() {
           setLoading(false);
           // Redirect to signup after a short delay
           setTimeout(() => {
-            router.push("/");
+            router.push("/login");
           }, 5000);
           return;
         }
@@ -101,7 +101,7 @@ export default function VerifyPage() {
 
       // Redirect to home page after 5 seconds
       setTimeout(() => {
-        router.push("/");
+        router.push("/login");
       }, 5000);
     } catch (error) {
       console.error(
@@ -189,7 +189,7 @@ export default function VerifyPage() {
                 Your account has been successfully verified.
               </p>
               <p className="text-gray-600 mb-8">
-                You will be redirected to the home page in a few seconds.
+                You will be redirected to the Login page in a few seconds.
               </p>
               <div className="flex justify-center">
                 <div className="animate-pulse flex space-x-2">

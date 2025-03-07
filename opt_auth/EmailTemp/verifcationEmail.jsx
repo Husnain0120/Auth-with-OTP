@@ -11,7 +11,7 @@ import {
   Container,
 } from "@react-email/components";
 
-export default function verifaction({ username, otp }) {
+export default function verifaction({ username, otp, id }) {
   return (
     <Html lang="en" dir="ltr">
       <Head>
@@ -113,7 +113,7 @@ export default function verifaction({ username, otp }) {
 
           {/* Verification Button */}
           <Button
-            href="https://your-website.com/verify"
+            href={`http://localhost:3000/verify_otp/${id}`}
             style={{
               background:
                 "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%)",
