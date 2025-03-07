@@ -30,14 +30,14 @@ const UserSchema = new Schema(
       enum: ["user", "admin"],
       default: "user",
     },
-    isVrified: { type: Boolean, default: false },
+    isVerified: { type: Boolean, default: false },
     otpCode: {
       type: String,
-      required: true,
+      // required: true,
     },
     otpCodeExpiry: {
       type: Date,
-      required: true,
+      // required: true,
     },
     forgotPassword: {
       type: String,

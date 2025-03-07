@@ -3,8 +3,12 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import axios from "axios";
+import { useParams } from "next/navigation";
 
 export default function VerifyPage() {
+  const params = useParams();
+  console.log(params.id);
   // Static verification state - set to false initially
   const verify = false;
 
@@ -27,6 +31,22 @@ export default function VerifyPage() {
     "",
     "",
   ]);
+
+  const handleverifycode = async () => {
+    try {
+      const codeinStr = verificationCode.join("").toString();
+      console.log(codeinStr.toString());
+      await axios.post(`/api/auth/verifyotp`, {
+        verificationCode: codeinStr,
+      });
+      // console.log(res.data);
+    } catch (error) {
+      console.error(
+        "Error verifying OTP:",
+        error.response?.data || error.message
+      );
+    }
+  };
 
   // Handle input change
   const handleChange = (index, value) => {
@@ -175,6 +195,7 @@ export default function VerifyPage() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={handleverifycode}
                   className="w-full bg-black text-white py-3 rounded-lg font-medium"
                 >
                   Verify

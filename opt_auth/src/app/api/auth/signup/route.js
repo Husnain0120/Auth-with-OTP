@@ -47,7 +47,7 @@ export async function POST(request) {
     // ----create a 6 digits otp----  \\
     const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
     // ----create Expiry otp----  \\
-    const otpExpiresAt = Date.now() + 60 * 1000;
+    const otpExpiresAt = Date.now() + 60 * 60 * 1000; // 1 hour from now
 
     // Hash password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
