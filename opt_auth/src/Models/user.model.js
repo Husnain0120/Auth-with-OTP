@@ -41,11 +41,9 @@ const UserSchema = new Schema(
     },
     forgotPassword: {
       type: String,
-      required: true,
     },
     forgotPasswordExpiry: {
       type: Date,
-      required: true,
     },
   },
   {

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function VerifyPage() {
   // Static verification state - set to false initially
-  const verify = true;
+  const verify = false;
 
   // Create refs for the 6 input fields
   const inputRefs = [
