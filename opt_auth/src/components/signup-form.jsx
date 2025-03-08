@@ -10,7 +10,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
-export function SignupForm() {
+export function SignupForm({ className, ...props }) {
   const router = useRouter();
   const [user, setUser] = useState({
     username: "",
@@ -49,7 +49,11 @@ export function SignupForm() {
 
   return (
     <div className="w-full max-w-md mx-auto space-y-6 p-6 bg-card rounded-lg border shadow-sm">
-      <form onSubmit={signUpHandle} className={cn("flex flex-col gap-6")}>
+      <form
+        onSubmit={signUpHandle}
+        className={cn("flex flex-col gap-6", className)}
+        {...props}
+      >
         <div className="flex flex-col items-center gap-2 text-center">
           <h1 className="text-2xl font-bold tracking-tight">
             Sign up to create your account

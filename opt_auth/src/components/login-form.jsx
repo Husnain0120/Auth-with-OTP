@@ -48,7 +48,7 @@ export function LoginForm({ className, ...props }) {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-6 p-6 bg-card rounded-lg border shadow-sm">
+    <div className="w-full max-w-md mx-auto space-y-6 p-6 bg-card rounded-lg  shadow-xl">
       <form
         onSubmit={handleLogin}
         className={cn("flex flex-col gap-6", className)}

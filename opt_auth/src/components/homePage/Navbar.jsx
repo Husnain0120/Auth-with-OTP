@@ -3,8 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -19,7 +22,7 @@ export default function Navbar() {
     { name: "Documentation", href: "#docs" },
   ];
 
-  const loginToken = false;
+  const loginToken = true;
 
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
@@ -46,19 +49,28 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-black text-white px-4 py-2 rounded-lg font-medium"
             >
               Get Started
-            </motion.button>
+            </motion.button> */}
             {loginToken ? (
               <div className="px-3 py-3">
                 <motion.button
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-black text-white px-4 py-2 rounded-lg font-medium"
-                  onClick={() => setIsOpen(false)}
+                  className="w-full   bg-red-500 text-white px-4 py-2 rounded-b-full cursor-pointer font-medium"
+                  onClick={async () => {
+                    setIsOpen(false);
+                    try {
+                      await axios
+                        .post("/api/auth/logout")
+                        .then(router.push("/login"));
+                    } catch (error) {
+                      console.log(error, ": failed to logout");
+                    }
+                  }}
                 >
                   Logout
                 </motion.button>
