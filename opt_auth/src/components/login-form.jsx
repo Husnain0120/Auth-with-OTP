@@ -48,7 +48,7 @@ export function LoginForm({ className, ...props }) {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-6 p-6 bg-card rounded-lg  shadow-xl">
+    <div className="w-full max-w-md mx-auto space-y-6 p-6 bg-card rounded-lg ">
       <form
         onSubmit={handleLogin}
         className={cn("flex flex-col gap-6", className)}
@@ -83,12 +83,14 @@ export function LoginForm({ className, ...props }) {
               <Label htmlFor="password" className="text-sm font-medium">
                 Password
               </Label>
-              <Link
-                href="/forgot-password"
-                className="text-xs text-primary hover:text-primary/90 transition-colors underline-offset-4 hover:underline"
+              {/* <Link
+                href="#"
+                className="text-xs cursor-not-allowed hover:text-primary/90 transition-colors underline-offset-4 hover:underline text-gray-300"
+                disabled={true}
               >
                 Forgot your password?
-              </Link>
+                <span className="text-green-600 pl-0.5">(soon)</span>
+              </Link> */}
             </div>
             <Input
               id="password"
@@ -107,13 +109,16 @@ export function LoginForm({ className, ...props }) {
           >
             {isLoading ? "Logging in..." : "Login"}
           </Button>
-          <div className="relative text-center text-sm">
+          {/* <div className="relative text-center text-sm">
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t"></span>
             </div>
             <div className="relative flex justify-center">
               <span className="bg-card px-2 text-xs text-muted-foreground">
-                Or continue with
+                Or continue with{" "}
+                <span className="text-yellow-400">
+                  (working stage)<span className="text-red-500">*</span>
+                </span>
               </span>
             </div>
           </div>
@@ -121,11 +126,11 @@ export function LoginForm({ className, ...props }) {
             variant="outline"
             className="w-full h-10 transition-all"
             type="button"
-            disabled={isLoading}
+            disabled={true}
           >
             <Github className="mr-2 h-4 w-4" />
             Login with GitHub
-          </Button>
+          </Button> */}
         </div>
         <div className="text-center text-sm text-muted-foreground">
           Don&apos;t have an account?{" "}

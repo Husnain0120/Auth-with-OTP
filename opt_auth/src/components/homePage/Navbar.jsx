@@ -84,12 +84,12 @@ export default function Navbar() {
             ))}
 
             {loginToken && (
-              <div className="bg-gray-100 px-3 py-2 rounded-lg border border-gray-200 flex items-center gap-3">
+              <div className="bg-gray-200 px-2 py-1 rounded-lg border border-gray-200 flex items-center gap-3">
                 <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white font-bold">
                   {getAvatarLetter()}
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-sm font-medium text-gray-900 truncate">
+                  <p className="text-[10px] font-bold text-gray-900 truncate">
                     {email}
                   </p>
                   <p className="text-xs text-gray-500 truncate">{username}</p>

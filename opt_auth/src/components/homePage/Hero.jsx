@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({ data }) {
+  console.log("Hero:", data);
+
   return (
     <section className="py-16 px-4 sm:px-8 md:px-16 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -16,6 +18,10 @@ export default function Hero() {
             Secure Your Digital Identity with OTP Verification
           </h1>
           <p className="text-lg text-gray-700 mb-8">
+            {/* {data.username}---{" "} */}
+            <span className="px-2 bg-amber-600 text-white font-medium italic rounded-md text-center">
+              npx-create-opt-auth
+            </span>{" "}
             Protect your users and data with our advanced one-time password
             verification system. Simple to implement, powerful to use.
           </p>

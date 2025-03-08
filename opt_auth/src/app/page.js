@@ -1,3 +1,5 @@
+"use client";
+
 import Benefits from "@/components/homePage/Benefits";
 import CTA from "@/components/homePage/CTA";
 import Footer from "@/components/homePage/Footer";
@@ -6,6 +8,9 @@ import HowItWorks from "@/components/homePage/HowitWorks";
 import Implementation from "@/components/homePage/implementation";
 import Navbar from "@/components/homePage/Navbar";
 import UseCases from "@/components/homePage/UseCases";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   return (

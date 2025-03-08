@@ -8,7 +8,7 @@ export async function GET(req) {
   // console.log(req);
   try {
     const userId = await getUserDataFromToken(req); // Fixed function call
-    console.log(userId);
+    // console.log(userId);
 
     if (!userId) {
       return NextResponse.json(
