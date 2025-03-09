@@ -24,7 +24,6 @@ export function LoginForm({ className, ...props }) {
     try {
       const res = await axios.post(`/api/auth/login`, { email, password });
 
-      console.log(document.DOCUMENT_TYPE_NODE);
       toast.success("Login successful", {
         description: res.data.message,
       });
