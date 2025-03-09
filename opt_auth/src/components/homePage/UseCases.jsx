@@ -65,6 +65,8 @@ export default function UseCases() {
                   src={useCase.image || "/placeholder.svg"}
                   alt={`${useCase.title} illustration`}
                   fill
+                  priority
+                  sizes="1000px"
                   className="object-contain"
                 />
               </div>

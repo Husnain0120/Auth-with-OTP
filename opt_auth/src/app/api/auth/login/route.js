@@ -1,3 +1,4 @@
+"use server";
 import { DataBaseConnection } from "@/DataBase/db";
 import { sendVerifactionEmail } from "@/lib/resendEMail";
 import { User } from "@/Models/user.model";

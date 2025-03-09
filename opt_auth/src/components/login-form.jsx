@@ -24,19 +24,19 @@ export function LoginForm({ className, ...props }) {
     try {
       const res = await axios.post(`/api/auth/login`, { email, password });
 
+      console.log(document.DOCUMENT_TYPE_NODE);
       toast.success("Login successful", {
         description: res.data.message,
       });
 
       setEmail("");
       setPassword("");
-      router.push("/");
-    } catch (error) {
-      console.error(
-        "Login Error:",
-        error.response?.data.message || error.message
-      );
 
+      // Delay the router push to avoid hydration issues
+      setTimeout(() => {
+        router.push("/");
+      }, 100);
+    } catch (error) {
       toast.error("Login failed", {
         description:
           error.response?.data?.message ||

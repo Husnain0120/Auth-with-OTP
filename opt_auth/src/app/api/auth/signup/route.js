@@ -1,3 +1,4 @@
+"use server";
 import { DataBaseConnection } from "@/DataBase/db";
 import { sendVerifactionEmail } from "@/lib/resendEMail";
 import { User } from "@/Models/user.model";
@@ -44,10 +45,9 @@ export async function POST(request) {
       );
     }
 
-    // ----create a 6 digits otp----  \\
-    const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
-    // ----create Expiry otp----  \\
-    const otpExpiresAt = Date.now() + 60 * 60 * 1000; // 1 hour from now
+    // Generate OTP and expiry time
+    const otpCode = String(Math.floor(100000 + Math.random() * 900000));
+    const otpExpiresAt = new Date(Date.now() + 60 * 60 * 1000).toISOString();
 
     // Hash password before saving
     const hashedPassword = await bcrypt.hash(password, 10);

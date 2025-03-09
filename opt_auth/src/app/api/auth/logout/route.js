@@ -1,3 +1,4 @@
+"use server";
 import { DataBaseConnection } from "@/DataBase/db";
 import { NextResponse } from "next/server";
 

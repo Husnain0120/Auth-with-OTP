@@ -3,9 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function Hero({ data }) {
-  console.log("Hero:", data);
-
+export default function Hero() {
   return (
     <section className="py-16 px-4 sm:px-8 md:px-16 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -59,6 +57,7 @@ export default function Hero({ data }) {
             fill
             className="object-cover"
             priority
+            sizes="1000px"
           />
         </motion.div>
       </div>

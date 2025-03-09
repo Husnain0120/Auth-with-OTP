@@ -83,6 +83,8 @@ export default function HowItWorks() {
               alt="OTP Process illustration"
               fill
               className="object-contain"
+              priority
+              sizes="1000px"
             />
           </motion.div>
         </div>

@@ -30,7 +30,7 @@ export default function Navbar() {
     setIsLoading(true);
     try {
       const res = await axios.get("/api/userprofile");
-      console.log(res.data.data);
+
       const data = res.data.data;
       if (data) {
         setLoginToken(true);

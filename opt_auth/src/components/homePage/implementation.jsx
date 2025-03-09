@@ -52,6 +52,8 @@ const verifyOTP = async (requestId, code) => {
               src="/filewithchane.png"
               alt="Implementation illustration"
               fill
+              priority
+              sizes="1000px"
               className="object-contain"
             />
           </motion.div>

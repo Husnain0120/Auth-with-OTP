@@ -1,3 +1,4 @@
+"use server";
 import { Resend } from "resend";
 import verifaction from "../../EmailTemp/verifcationEmail";
 import { NextResponse } from "next/server";
